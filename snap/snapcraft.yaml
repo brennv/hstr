@@ -1,0 +1,31 @@
+
+# Building a snap
+
+# sudo apt-get install snapcraft build-essential
+# git clone https://github.com/dvorka/hstr
+# cd hstr
+# cd ./dist && ./1-dist.sh && cd ..
+# snapcraft
+
+
+name: hstr
+version: '1.24'
+summary: Easily view, navigate, search and manage your command history.
+description: |
+  Are you looking for a command that you used recently? Do you want to avoid
+  the need to write long commands over and over again despite you used them
+  recently? Are you looking for a tool that is able to manage your favorite
+  commands? HSTR is a command line utility that brings improved Bash and zsh
+  command completion from the history.
+
+grade: devel
+confinement: devmode
+
+parts:
+  hstr-source:
+    source: https://github.com/dvorka/hstr/archive/1.24.tar.gz
+    plugin: autotools
+
+
+# This currently fails with error:
+# './configure', '--prefix=']' returned non-zero exit status 1
