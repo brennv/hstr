@@ -4,7 +4,7 @@
 # sudo apt-get install snapcraft build-essential
 # git clone https://github.com/dvorka/hstr
 # cd hstr
-# cd ./dist && ./1-dist.sh && cd ..
+# cd ./dist && ./1-dist.sh && cd ..  #hmmmmm
 # snapcraft
 
 
@@ -25,6 +25,17 @@ parts:
   hstr-source:
     source: https://github.com/dvorka/hstr/archive/1.24.tar.gz
     plugin: autotools
+    build-packages:
+      - git
+      - g++
+      - make
+      - yasm
+      - autoconf
+      - libtool
+      - cmake
+      - pkg-config
+      - automake
+      - build-essential
 
 
 # This currently fails with error:
