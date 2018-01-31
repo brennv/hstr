@@ -1,11 +1,17 @@
-
 # Building a snap
 
-# sudo apt-get install snapcraft build-essential
+# Create/verify  user accounts with build.snapcraft.io and ubuntu one 
+
+# sudo snap install lxd && sudo lxd init      # if you don’t have LXD already
+# sudo usermod -a -G lxd $USER && newgrp lxd  # if your user is not in the lxd group already
+# sudo snap install --classic snapcraft       # if you don’t have snapcraft already
+
 # git clone https://github.com/dvorka/hstr
 # cd hstr
-# cd ./dist && ./1-dist.sh && cd ..  #hmmmmm
-# snapcraft
+
+# cd ./dist && ./1-dist.sh && cd ..  #hmmmmm maybe this is not helpin
+
+# snapcraft cleanbuild --debug
 
 
 name: hstr
@@ -36,7 +42,3 @@ parts:
       - pkg-config
       - automake
       - build-essential
-
-
-# This currently fails with error:
-# './configure', '--prefix=']' returned non-zero exit status 1
